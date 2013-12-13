@@ -147,6 +147,8 @@ block <<-EOS
   - something expected stopped happening
 EOS
 
+image 'appy-eevee.png'
+
 block <<-EOS
   SPOILERS!
 
@@ -340,22 +342,96 @@ code <<-EOS, :javascript
     "total":8.32,
     "store_number":5001
   }
-
 EOS
 
 block <<-EOS
-  Appygram 2014
+  app_json is parsed, so you can address it
+  in your email and webhook configurations,
+  extracting information for your responders
+EOS
 
-  - \e[1mYour #1 Must Have Feature Here\e[0m
-  - App store monitoring exits beta
-  - More web-based form support
-  - Integrate with more crash analytics
-  - Rule definitions in web interface
+image 'appy-extracting-variables.png'
+
+block <<-EOS
+  ... or, actually,
+
+  ... they might just learn to love JSON
 EOS
 
 center <<-EOS
-  Source for this talk
-
-  \e[1mhttps://github.com/rfc2616/modev-east-2013\e[0m
+  This actually happened.
 EOS
+
+section "Effective Practices" do
+  center <<-EOS
+    Categorize your feedback
+  EOS
+  block <<-EOS
+    Use what you know about different
+    responders to drive design of different
+    topics
+  EOS
+  block <<-EOS
+    But remember for the user, self
+    categorization may be hard. Stick to
+    concepts they are likely to understand.
+  EOS
+  block <<-EOS
+    "My Order"
+    "App Feedback"
+  EOS
+  center <<-EOS
+    Pass useful context information
+  EOS
+  center <<-EOS
+    Respect your policies and users' privacy
+  EOS
+  center <<-EOS
+    Prompted vs. spontaneous feedback
+  EOS
+  center <<-EOS
+    Prompt when you need to know something
+
+    - Product/service has spontaneous negative comments
+    - Or it has a suspicious lack of comments
+  EOS
+  center <<-EOS
+    Prompt happy users to make public reviews
+  EOS
+  center <<-EOS
+    Prompt happy users to make public reviews
+
+    (maybe skip the unhappy ones?) ((up to you))
+  EOS
+  center <<-EOS
+    Use Appygram retention and/or export features
+    to keep records and measure things.
+
+    Measuring is good.
+  EOS
+  center <<-EOS
+    Follow up with users when you take action
+    on their feedback
+  EOS
+end
+
+section "Wrapping Up" do
+
+  block <<-EOS
+    Appygram 2014
+
+    - \e[1mYour #1 Must Have Feature Here\e[0m
+    - App store monitoring exits beta
+    - More web-based form support
+    - Integrate with more crash analytics
+    - Rule definitions in web interface
+  EOS
+
+  center <<-EOS
+    Source for this talk
+
+    \e[1mhttps://github.com/rfc2616/modev-east-2013\e[0m
+  EOS
+
+end
 
