@@ -179,14 +179,113 @@ block <<-EOS
   How do you Appygram?
 
   Can you submit a HTML form?
-  You're good.
+  You're all set.
 EOS
 
 block <<-EOS
   How do you Appygram?
 
   Can you POST or PUT a JSON object?
-  You're good too.
+  You're all set.
+EOS
+
+center <<-EOS
+  https://www.appygram.com/docs
+EOS
+
+image 'appy-docs-screen.png'
+
+center <<-EOS
+The only required field is
+
+\e[1mapi_key\e[0m
+
+A valid Appygram API key for your application
+EOS
+
+block <<-EOS
+All other fields are optional
+
+  \e[1mname\e[0m           Submitter's name
+  \e[1memail\e[0m          Submitter's contact email
+  \e[1mphone\e[0m          Submitter's telephone number
+  \e[1mmessage\e[0m        Body of the message
+  \e[1mplatform\e[0m       Platform of the submitter's system
+  \e[1msoftware\e[0m       Software version
+EOS
+
+
+code <<-EOS, :java
+  // Java/Android
+
+  // Using https://github.com/rfc2616/appygram-android-example
+  // http://www.appygram.com/news/android--appygram-101-part-1
+
+  Map<String, String> params = new HashMap<String, String>();
+  params.put("name", getUIString(R.id.editName));
+  params.put("email", getUIString(R.id.editEmail));
+  params.put("message", getUIString(R.id.editMessage));
+  new SendAppygramTask(params).execute();
+EOS
+
+code <<-EOS, :objectivec
+  // iOS
+  // Using AFNetworking - https://github.com/AFNetworking/AFNetworking
+
+  AFHTTPRequestOperationManager *manager =
+      [AFHTTPRequestOperationManager manager];
+  NSDictionary *params = @{@"name": self.usernameField.text,
+                           @"email": self.emailField.text,
+                           @"message": self.message.text,
+                           @"api_key": myApiKey};
+  [manager POST:@"https://arecibo.appygram.com/appygrams"
+      parameters:params success:^(AFHTTPRequestOperation *operation,
+                                 id responseObject) {
+      // success
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+      // not success
+  }];
+EOS
+
+code <<-EOS, :ruby
+  # RubyMotion
+  # AFMotion - https://github.com/usepropeller/afmotion
+
+  params = {
+    :name => @username.text,
+    :email => @email.text,
+    :message => @message.text,
+    :api_key => Constants.api_key
+  }
+  AFMotion::HTTP.post("http://arecibo.appygram.com/appygrams",
+      params) do |result|
+    # success
+  end
+EOS
+
+code <<-EOS, :javascript
+  // JavaScript
+  // (Ti) https://github.com/dubsoft/appygram-ti
+  // (Node) https://github.com/wlaurance/appygram-node
+
+  var appygram = require('appygram');
+  appygram.setApiKey('api_key');
+  appygram.sendFeedback({
+    name:'Will',
+    topic:'Feedback',
+    message:'I am sending an appygram!',
+    email:'w.laurance@gmail.com'
+  }, function(){
+    //done sending feedback
+  });
+EOS
+
+code <<-EOS, :ruby
+  # Ruby
+  # https://github.com/anythinglabs/appygram.rb
+
+  require 'appygram'
+  Appygram.send :topic => 'Test', :message => 'This is a test.'
 EOS
 
 block <<-EOS
