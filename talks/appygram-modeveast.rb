@@ -90,10 +90,46 @@ center <<-EOS
 EOS
 
 center <<-EOS
+  That looks a little bit like this
+EOS
+
+image 'appy-example-app.png'
+
+image 'appy-list.png'
+
+image 'appy-sample-email.png'
+
+image 'appy-webhook-config.png'
+
+center <<-EOS
+  Using a simple "topic" mechanism,
+  you can have different routings.
+EOS
+
+image 'appy-topics.png'
+
+center <<-EOS
+  You can capture platform info and
+  any application-supplied JSON you like
+
+  (so you don't have to follow up
+  and ask for that info)
+EOS
+
+center <<-EOS
+  All the email and webhook config
+  lives outside your app in a web
+  interface, where you can delegate
+  management of it.
+EOS
+
+center <<-EOS
   ** ADVANCED **
 
   Appygram also collects and forwards
   App Store and Google Play reviews
+
+  (contact us to sign up for beta)
 EOS
 
 center <<-EOS
@@ -288,9 +324,38 @@ code <<-EOS, :ruby
   Appygram.send :topic => 'Test', :message => 'This is a test.'
 EOS
 
-block <<-EOS
-  Coming down the road
+center <<-EOS
+  The Field That Is Not A Field
 
-  - Support for web-based feedback forms
+  \e[1mapp_json\e[0m
+EOS
+
+code <<-EOS, :javascript
+  {
+    "products": [{
+      "name":"Bacon Cheeseburger",
+      "totalcost":7.49
+    }],
+    "subtotal":7.49,
+    "total":8.32,
+    "store_number":5001
+  }
+
+EOS
+
+block <<-EOS
+  Appygram 2014
+
+  - \e[1mYour #1 Must Have Feature Here\e[0m
+  - App store monitoring exits beta
+  - More web-based form support
+  - Integrate with more crash analytics
+  - Rule definitions in web interface
+EOS
+
+center <<-EOS
+  Source for this talk
+
+  \e[1mhttps://github.com/rfc2616/modev-east-2013\e[0m
 EOS
 
