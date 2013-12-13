@@ -148,6 +148,48 @@ block <<-EOS
 EOS
 
 block <<-EOS
+  Where we are in our journey:
+
+  > 2 million installs talk to Appygram
+  > 1 million events processed per week
+  > 50,000 actionable messages routed
+EOS
+
+center <<-EOS
+  Our goal is to do \e[1ma really good job\e[0m
+
+  at something most devs consider \e[1man afterthought.\e[0m
+EOS
+
+block <<-EOS
+  Infrastructure vendors that make Appygram good:
+
+  SendGrid (mail delivery)
+  Google (scalable API endpoints)
+  Digital Ocean (website interfaces and workers)
+EOS
+
+block <<-EOS
+  How do you Appygram?
+
+
+EOS
+
+block <<-EOS
+  How do you Appygram?
+
+  Can you submit a HTML form?
+  You're good.
+EOS
+
+block <<-EOS
+  How do you Appygram?
+
+  Can you POST or PUT a JSON object?
+  You're good too.
+EOS
+
+block <<-EOS
   Coming down the road
 
   - Support for web-based feedback forms
